@@ -1,0 +1,327 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  line-height: calc(1em + 0.5rem);
+  font-family: "Libre Caslon Text", serif;
+   font-family: "Libre Caslon Text", serif;
+}
+html,
+body {
+  height: 100%;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+/*.libre-caslon-text-regular-italic {
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}*/
+/******************************************************************************
+CSS
+******************************************************************************/
+
+
+
+.container {
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 8vh 100vh ;
+  grid-template-areas:
+    "nav"
+    "main"
+    ;
+ 
+}
+
+/******************************************************************************
+nav below
+******************************************************************************/
+
+/* Navigation */
+.nav {
+  grid-area: nav;
+  background: #a55959;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 80px;
+  z-index: 80000;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav ul li a {
+  color: #fffaf1;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.5s, font-size 0.5s;
+    font-style: italic;
+}
+
+.nav ul li a:hover {
+  color: #eeccd9;
+  font-size: 20px;
+}
+
+/******************************************************************************
+main below
+******************************************************************************/
+
+
+/******************************************************************************
+Brainstorm BElow
+******************************************************************************/
+.main
+{
+  grid-area:main;
+  padding:10vh 10vw;
+
+  background:#a55959;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-gap:20px;
+  grid-template-rows:2fr 7fr;
+  grid-template-areas:
+    "brainstormHeader brainstormHeader brainstormHeader"
+    "brainstorm1 brainstorm2  brainstorm3"
+    ;
+  
+}
+
+.brainstormHeader
+{
+  grid-area:brainstormHeader;
+  background:;
+  border-radius:20px;
+  border:2px solid white;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  
+  
+}
+.brainstorm1
+{
+ grid-area:brainstorm1; 
+  background:#fffaf1;
+  
+    
+  border:2px solid  #a55959;
+  color:#a55959;
+  overflow-y:scroll;
+ padding:15px;
+}
+.brainstorm2
+{
+  overflow:hidden;
+  overflow-y:scroll;
+  grid-area:brainstorm2;
+  background:#fffaf1;
+    
+  
+  border:2px solid #a55959;
+  color:#a55959;
+  padding:15px;
+  
+
+}
+.brainstorm3
+{
+ grid-area:brainstorm3; 
+  background:#fffaf1;
+  
+    
+  border:2px solid #a55959;
+  color:#a55959;
+  overflow-y:scroll;
+ padding:15px;
+}
+.brainstorm h1,
+.brainstrom h3
+{
+  display:flex;
+  justify-content:center;
+}
+.brainstorm h3
+{
+  margin-block:40px;
+  color:#0b1215;
+}
+.brainstorm img
+{
+  border:10px solid #0b1215;
+  border-radius:20px;
+  margin-block:13px;
+}
+.card
+{
+ background:#fffaf1; 
+  background:#a55959;
+  color:#fffaf1;
+  border:2px solid #fffaf1;
+    transition: background-color 0.3s ease; 
+  transition: border 0.3s ease; 
+}
+.card:hover
+{
+  background:#fffaf1; 
+  border:2px solid #a55959;
+  color:#a55959;
+  
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+/*.libre-caslon-text-regular-italic {
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}*/
+/******************************************************************************
+Footer BElow
+******************************************************************************/
+footer
+{
+  grid-area:Footer;
+  background:#fffaf1;
+  padding-block:0.5vh;
+  
+
+}
+
+.fa {
+  font-size: 20px;
+  color: #a55959;
+  text-decoration:none;
+}
+
+
+.footerTop
+{
+  height:13vh;
+  width:100vw;
+  display:grid;
+  padding-block:1vh;
+  grid-template-rows:repeat(3,1fr);
+  grid-template-areas:
+    "contactSocialMedia"
+    "footerNav"
+    "peopleFooter"
+
+    ;
+}
+
+.peopleFooter
+{
+  grid-area:peopleFooter;
+  width:20vw;
+  height:4vh;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:10px;
+  color:#a55959;
+  
+  
+}
+
+
+.footerNav {
+  grid-area:footerNav;
+ 
+  margin:auto;
+  width: 40vw;
+  height: 4vh;
+  background: #fffaf1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.footerNav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerNav ul li {
+  margin-right: 20px;
+}
+
+.footerNav ul li a {
+  color: #a55959;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+
+.contactSocialMedia {
+  grid-area:contactSocialMedia ;
+
+ width:20vw;
+  height:4vh;
+  margin:auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+.footerDivider
+{
+  height:3vh;
+   width:100vw;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  
+}
+hr
+{
+ height:2px;
+  width:90vw;
+  background:#a55959;
+  border:none;
+   margin:auto;
+}
+.footerBottom
+{
+  color:#a55959;
+  height:9vh;
+   width:100vw;
+ 
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  
+}

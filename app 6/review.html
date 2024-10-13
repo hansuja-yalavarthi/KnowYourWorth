@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="review.css" />
+    <title>ShittySite4</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="nav">
+        <ul>
+          <li class="home"><a href="https://knowyourworth.glitch.me/">Home</a></li>
+          <li class="skibidy"><a href="https://knowyourworthrtc.glitch.me/">Rate The Companies</a></li>
+          <li class="lessons"><a href="https://knowyourworthbd.glitch.me/index.html">Bias Detector</a></li>
+          <li class="practice"><a href="https://knowyourworth.glitch.me/article.html">Article</a></li>
+          <li class="contact"><a href="https://knowyourworth.glitch.me/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="main">
+        <div class="mainLeft">
+          <h2>Real Reviews</h2>
+          <h3>from real women</h3>
+          <div class="stars">
+             &#9733; &#9733; &#9733; &#9733; &#9733;
+          </div>
+          <div class="reviewContainer">
+            <div class="rotating-text-wrapper">
+  <h4>I really apreciate the site! I've been strugling to get a job and didn't want to waste time appling to baised companies. </h4>
+  <h4>This site was really easy to use. I like having a tool like this to know I have equal oppertunity!</h4> 
+  <h4>Really intresting idea. It's super useful, I really like the rate the employer page we really need to call them out more.</h4>
+</div>
+
+          </div>
+        </div>
+       <div class="mainRight">
+  <div class="mainImage1Container">
+    <div class="image1Div">
+     
+      <!--  <img src="#" />-->
+    </div>
+  </div>
+  <div class="mainImage2Container">
+    <div class="image2Div">
+      
+      <!-- <img src="#" />-->
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+   <footer>
+      <div class="footerTop">
+        <div class="contactSocialMedia">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-snapchat"></a>
+        </div>
+        <div class="footerNav">
+         <ul>
+          <li class="home"><a href="index.html">Home</a></li>
+          <li class="skibidy">
+            <a href="https://checker-olive-rail.glitch.me/"
+              >Rate The Companies</a
+            >
+          </li>
+          <li class="lessons">
+            <a href="https://knowyourworth.glitch.me/index.html"
+              >Bias Detector</a
+            >
+          </li>
+          <li class="practice"><a href="practice.html">Practice</a></li>
+          <li class="contact"><a href="contact.html">Contact</a></li>
+        </ul>
+        </div>
+
+        <div class="peopleFooter">
+          <div>Hansuja Yalaverthi</div>
+          <div>|</div>
+          <div>Tiwari</div>
+        </div>
+      </div>
+      <div class="footerDivider">
+        <hr />
+      </div>
+      <div class="footerBottom">
+        <h3>1 Stevenson Dr, Lincolnshire, IL 60069</h3>
+        <h6>@ Kitchen Coders | All Rights Reserved</h6>
+      </div>
+    </footer>
+    <script>
+      var blockLetters = new TimelineMax({ paused: true }),
+        albumLetters = new TimelineMax({ paused: false }),
+        fullText = $("#fullText"),
+        splitHeadline = new SplitText(fullText, { type: "words,chars" }),
+        chars = splitHeadline.chars,
+        bgController = $("#backgroundController"),
+        letter = $(".letter"),
+        letterTiming = 0.2,
+        spaceTiming = 0.3,
+        stringsArray = ["That's the spirit", "The brand new album"],
+        currentString = 0;
+
+      function revertSplit(targetSplit, newString) {
+        if (newString !== undefined) {
+          // go to the nxt string
+          currentString++;
+          // reset the text timeline
+          albumLetters.pause(0).clear();
+          // revert the tet split
+          targetSplit.revert();
+
+          // set the container's opacity to 0 and change the text
+          TweenLite.set(fullText, { autoAlpha: 0, text: { value: newString } });
+
+          // reset the split text
+          splitHeadline = new SplitText(fullText, { type: "words,chars" });
+          chars = splitHeadline.chars;
+
+          // container's opacity back to 1
+          TweenLite.set(fullText, { autoAlpha: 1 });
+
+          albumLetters
+            .staggerFrom(chars, 0.6, { opacity: 0, y: -20 }, 0.1)
+            .staggerTo(
+              chars,
+              0.6,
+              { opacity: 0, y: 20 },
+              0.05,
+              "+=0",
+              revertSplit,
+              [splitHeadline, stringsArray[currentString]]
+            )
+            .play();
+        } else {
+          currentString = 0;
+          revertSplit(splitHeadline, stringsArray[currentString]);
+        }
+      }
+      currentString++;
+
+      albumLetters
+        .staggerFrom(chars, 0.6, { opacity: 0, y: -20 }, 0.1)
+        .staggerTo(
+          chars,
+          0.6,
+          { opacity: 0, y: 20 },
+          0.05,
+          "+=0",
+          revertSplit,
+          [splitHeadline, stringsArray[currentString]]
+        );
+    </script>
+    
+  </body>
+</html>

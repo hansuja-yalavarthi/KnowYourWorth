@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: calc(1em + 0.5rem);
+}
+
+html, body {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  background: #a55959;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the formContainer horizontally */
+  justify-content: center; /* Centers the formContainer vertically */
+  min-height: 92vh; /* Matches the earlier grid layout or 100% height */
+  width: 100%;
+  grid-template-rows: 8vh 92vh;
+  grid-template-areas:
+    "nav"
+    "main";
+}
+
+/* Navigation */
+.nav {
+  grid-area: nav;
+  background: #a55959;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 80px;
+  z-index: 80000;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav ul li a {
+  color: #fffaf1;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.5s, font-size 0.5s;
+}
+
+.nav ul li a:hover {
+  color: #eeccd9;
+  font-size: 20px;
+}
+
+/* Header */
+.headerContainer {
+  text-align: center;
+  color: #fffaf1;
+  margin-bottom: 20px;
+}
+
+.headerContainer h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* Form */
+.formContainer {
+  background-color: #fffaf1;
+  padding: 20px;
+  border-radius: 15px;
+  width: 60%;
+  margin: 0 auto; /* This will center the form horizontally */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers the content vertically within the container */
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 1.2rem;
+  color: #a55959;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #a55959;
+  font-size: 1rem;
+  color: #a55959;
+  transition: background-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  background-color: #a55959;
+  color: #fffaf1;
+  outline: none;
+}
+
+.submitButton {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 20px;
+  border: 2px solid #fffaf1;
+  border-radius: 50px;
+  background-color: #a55959;
+  color: #fffaf1;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #fffaf1;
+  color: #a55959;
+  border: 2px solid #a55959;
+}
+
+/* Reviews section */
+#reviewsContainer {
+  margin-top: 50px;
+  color: #fffaf1;
+  width: 100%; /* Ensures the reviews section takes the full width of its container */
+  display: flex;
+  flex-direction: column; /* Make it a column layout */
+  align-items: center; /* Center all child items */
+  text-align: center; /* Center the text within this container */
+}
+
+#reviewsContainer h2 {
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+#reviewsList {
+  background-color: #fffaf1;
+  color: #a55959;
+  padding: 20px;
+  border-radius: 15px;
+  width: 60%; /* Matches the form's width */
+  max-width: 600px; /* Set a max width to limit stretching on larger screens */
+  margin: 0 auto; /* Centers the reviews section */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/******************************************************************************
+Footer BElow
+******************************************************************************/
+footer
+{
+  margin-top:20px;
+  grid-area:Footer;
+  background:#fffaf1;
+  padding-block:0.5vh;
+
+
+}
+
+.fa {
+  font-size: 20px;
+  color: #a55959;
+  text-decoration:none;
+}
+
+
+.footerTop
+{
+  height:13vh;
+  width:100vw;
+  display:grid;
+  padding-block:1vh;
+  grid-template-rows:repeat(3,1fr);
+  grid-template-areas:
+    "contactSocialMedia"
+    "footerNav"
+    "peopleFooter"
+
+    ;
+}
+
+.peopleFooter
+{
+  grid-area:peopleFooter;
+  width:20vw;
+  height:4vh;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:10px;
+  color:#a55959;
+  
+  
+}
+
+
+.footerNav {
+  grid-area:footerNav;
+ 
+  margin:auto;
+  width: 40vw;
+  height: 4vh;
+  background: #fffaf1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.footerNav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerNav ul li {
+  margin-right: 20px;
+}
+
+.footerNav ul li a {
+  color: #a55959;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+
+.contactSocialMedia {
+  grid-area:contactSocialMedia ;
+
+ width:20vw;
+  height:4vh;
+  margin:auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+.footerDivider
+{
+  height:3vh;
+   width:100vw;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  
+}
+hr
+{
+ height:2px;
+  width:90vw;
+  background:#a55959;
+  border:none;
+   margin:auto;
+}
+.footerBottom
+{
+  color:#a55959;
+  height:9vh;
+   width:100vw;
+ 
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  
+}

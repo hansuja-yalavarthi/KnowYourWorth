@@ -1,0 +1,245 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Libre Caslon Text", serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+/*.libre-caslon-text-regular-italic {
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}*/
+
+/******************************************************************************
+CSS
+******************************************************************************/
+.container {
+  display: grid;
+  grid-template-rows: 8vh 15vh auto;
+  grid-template-areas: 
+    "nav"
+    "contactHeader"
+    "formArea";
+  grid-gap: 5vh;
+  padding: 10px 10vw;
+  padding-bottom:40px;
+  background:#fffaf1;
+    background: #fffaf1;
+}
+
+/******************************************************************************
+Navigation
+******************************************************************************/
+.nav {
+  grid-area: nav;
+  background: #fffaf1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav ul li a {
+  color: #a55959;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.5s, font-size 0.5s;
+    font-style: italic;
+}
+
+.nav ul li a:hover {
+  color: #18392b;
+  font-size: 20px;
+}
+
+/******************************************************************************
+Contact Header
+******************************************************************************/
+.contactHeader {
+  grid-area: contactHeader;
+  background:  #a55959;
+  color: #fffaf1;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+    font-style: italic;
+}
+
+/******************************************************************************
+Form Area
+******************************************************************************/
+.formArea {
+  grid-area: formArea;
+  border-radius:20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:   #a55959;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+ width:100%;
+  padding: 20px;
+  background:#fffaf1;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid  #a55959;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+   transition: background-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+
+ background-color:#a55959;
+  outline: none; 
+  color:#fffaf1;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fffaf1;
+  background-color: #a55959;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+    font-style: italic;
+}
+
+
+button:hover
+{
+   color:#a55959;
+  border:2px solid #a55959;
+    background:#fffaf1;
+}
+
+
+/******************************************************************************
+Footer
+******************************************************************************/
+footer {
+  background:  #a55959;
+  padding-block: 0.5vh;
+  
+}
+
+.fa {
+  font-size: 20px;
+  color: #fffaf1;
+  text-decoration: none;
+}
+
+.footerTop {
+  display: grid;
+  padding-block: 1vh;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: 
+    "contactSocialMedia"
+    "footerNav"
+    "peopleFooter";
+}
+
+.contactSocialMedia {
+  grid-area: contactSocialMedia;
+  width: 20vw;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.footerNav {
+  grid-area: footerNav;
+  margin: auto;
+  width: 40vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerNav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerNav ul li a {
+  color: #fffaf1;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.peopleFooter {
+  grid-area: peopleFooter;
+  display: flex;
+  justify-content: space-between;
+  width: 20vw;
+  margin: auto;
+  font-size: 10px;
+  color: #fffaf1;
+}
+
+.footerDivider {
+  height: 3vh;
+  display: flex;
+  justify-content: center;
+}
+
+hr {
+  height: 2px;
+  width: 90vw;
+  background: #fffaf1;
+  border: none;
+}
+
+.footerBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fffaf1;
+}

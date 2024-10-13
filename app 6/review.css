@@ -1,0 +1,382 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  line-height: calc(1em + 0.5rem);
+}
+html,
+body {
+  height: 100%;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+/*.libre-caslon-text-regular-italic {
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}*/
+/******************************************************************************
+CSS
+******************************************************************************/
+
+
+
+.container {
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 8vh 92vh ;
+  grid-template-areas:
+    "nav"
+    "main"
+    ;
+ 
+}
+
+/******************************************************************************
+nav below
+******************************************************************************/
+
+/* Navigation */
+.nav {
+  grid-area: nav;
+  background: #a55959;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 80px;
+  z-index: 80000;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav ul li a {
+  color: #fffaf1;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.5s, font-size 0.5s;
+    font-style: italic;
+}
+
+.nav ul li a:hover {
+  color: #eeccd9;
+  font-size: 20px;
+}
+
+/******************************************************************************
+main below
+******************************************************************************/
+.main
+{
+  grid-area:main;
+  background: #a55959;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr;
+  grid-template-areas:"mainLeft mainRight";
+}
+.mainLeft
+{
+  grid-area:mainLeft;
+  background: #a55959;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+ padding: 10vh 15vw 10vh 10vw;
+
+}
+
+h2
+{
+ width:300px;
+  background :#a55959;
+  font-size:50px;
+  color:#fffaf1;
+  padding-bottom:20px;
+}
+h3
+{
+  font-size:40px;
+   color:#fffaf1;
+}
+.stars
+{
+   width:300px;
+  font-size:30px;
+  margin-top:20px;
+  color:#fffaf1;
+}.mainRight {
+  grid-area: mainRight;
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "mainImage1Container mainImage2Container";
+  grid-gap: 30px;
+  padding: 10vh 10vw;
+}
+
+.mainImage1Container {
+  grid-area: mainImage1Container;
+  
+  display: flex;
+  justify-content: flex-start;
+  align-items: top;
+}
+
+.image1Div {
+  width: 100%;
+  height: 80%;
+  background-image:url('https://cdn.glitch.global/23d744c5-54d0-4c08-b2eb-0af3d2d7f89c/studio-shot-sensual-woman-pink-suit.jpg?v=1728840344042');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  border:2px solid #fffaf1;
+}
+
+.mainImage2Container {
+  grid-area: mainImage2Container;
+  
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-end;
+  align-items: bottom;
+}
+
+.image2Div {
+  
+  width: 100%;
+  height: 80%;
+  background: pink;
+  border:2px solid #fffaf1;
+  background-image:url('https://cdn.glitch.global/23d744c5-54d0-4c08-b2eb-0af3d2d7f89c/cute-portrait-attractive-stylish-smiling-woman-walking-city-street-pink-coat-spring-fashion-trend-holding-purse.jpg?v=1728840342765');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  border:2px solid #fffaf1;
+}
+
+.reveiwContainer
+{
+  width:200px;
+  height:600px;
+  background:pink;
+}
+.rotating-text-wrapper {
+  height: 100%;
+  width:100%;
+  overflow:wrap;
+ 
+}
+.rotating-text-wrapper h4 {
+  font-size: 15px;
+  margin: 0;
+  padding:0;
+   color:#fffaf1;
+  
+  animation-duration: 18s;
+  animation-iteration-count: infinite;
+  opacity: 0;
+}
+.rotating-text-wrapper h4:nth-child(1) {
+
+  animation-name: rotating-text-1;
+}
+@keyframes rotating-text-1 {
+  0% {
+    transform: translateY(200%);
+  }
+  33% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+  34% {
+    opacity: 0;
+  }
+}
+.rotating-text-wrapper h4:nth-child(2) {
+
+  animation-name: rotating-text-2;
+}
+@keyframes rotating-text-2 {
+  33% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  66% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  67% {
+    opacity: 0;
+  }
+}
+.rotating-text-wrapper h4:nth-child(3) {
+
+  animation-name: rotating-text-3;
+}
+@keyframes rotating-text-3 {
+  66% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  99% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .rotating-text-wrapper {
+    font-size: 0.7rem;
+  }
+}
+
+
+/******************************************************************************
+Footer BElow
+******************************************************************************/
+footer
+{
+  grid-area:Footer;
+  background:#fffaf1;
+  padding-block:0.5vh;
+  
+
+}
+
+.fa {
+  font-size: 20px;
+  color: #a55959;
+  text-decoration:none;
+}
+
+
+.footerTop
+{
+  height:13vh;
+  width:100vw;
+  display:grid;
+  padding-block:1vh;
+  grid-template-rows:repeat(3,1fr);
+  grid-template-areas:
+    "contactSocialMedia"
+    "footerNav"
+    "peopleFooter"
+
+    ;
+}
+
+.peopleFooter
+{
+  grid-area:peopleFooter;
+  width:20vw;
+  height:4vh;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:10px;
+  color:#a55959;
+  
+  
+}
+
+
+.footerNav {
+  grid-area:footerNav;
+ 
+  margin:auto;
+  width: 40vw;
+  height: 4vh;
+  background: #fffaf1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.footerNav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerNav ul li {
+  margin-right: 20px;
+}
+
+.footerNav ul li a {
+  color: #a55959;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+
+.contactSocialMedia {
+  grid-area:contactSocialMedia ;
+
+ width:20vw;
+  height:4vh;
+  margin:auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+.footerDivider
+{
+  height:3vh;
+   width:100vw;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  
+}
+hr
+{
+ height:2px;
+  width:90vw;
+  background:#a55959;
+  border:none;
+   margin:auto;
+}
+.footerBottom
+{
+  color:#a55959;
+  height:9vh;
+   width:100vw;
+ 
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  
+}

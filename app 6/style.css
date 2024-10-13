@@ -1,0 +1,700 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  line-height: calc(1em + 0.5rem);
+  font-family: "Libre Caslon Text", serif;
+}
+html,
+body {
+  height: 100%;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+/*.libre-caslon-text-regular-italic {
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}*/
+/******************************************************************************
+CSS
+******************************************************************************/
+.container {
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 8vh 92vh 100vh 100vh ;
+  grid-template-areas:
+    "nav"
+    "homePage"
+    "missionPage"
+   
+   
+    "teamPage"
+  
+ 
+    ;
+ 
+}
+
+/******************************************************************************
+nav below
+******************************************************************************/
+
+/* Navigation */
+.nav {
+  grid-area: nav;
+  background: #a55959;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 80px;
+  z-index: 80000;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav ul li a {
+  color: #fffaf1;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.5s, font-size 0.5s;
+    font-style: italic;
+}
+
+.nav ul li a:hover {
+  color: #eeccd9;
+  font-size: 20px;
+}
+
+/* Home Page */
+.homePage {
+  grid-area: homePage;
+  width: 100vw;
+  background: #a55959;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "homeLeft homeRight";
+}
+
+.homeLeft {
+  grid-area: homeLeft;
+  background: #a55959;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeLeft img {
+  width: auto;
+  height: 500px;
+  border: none;
+}
+
+
+.homeRight {
+  grid-area: homeRight;
+  background:  #a55959;
+  padding: 20px;
+  overflow: hidden; /* Ensures anything outside the right section is hidden */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Animation for paragraphs */
+.animated-p {
+  opacity: 0;
+  transform: translateX(-100%); /* Starts completely off-screen to the left */
+  animation: slideIn 0.5s forwards;
+  animation-timing-function: ease-out;
+}
+
+/* Animation for the button */
+.animated-button {
+  opacity: 0;
+  transform: scale(0);
+  margin-left: 0; /* Start with no margin */
+  animation: fadeInScaleAndSlide 0.5s forwards;
+  animation-timing-function: ease-out;
+}
+
+/* Keyframe for sliding in the paragraphs */
+@keyframes slideIn {
+  to {
+    transform: translateX(0); /* Moves to the default position */
+    opacity: 1;
+    margin-left: 30px;
+  }
+}
+
+/* Keyframe for fading in the button */
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* Keyframe for fading in the button with margin-left */
+@keyframes fadeInScaleAndSlide {
+  to {
+    opacity: 1;
+    transform: scale(1);
+    margin-left: 30px; /* Final margin */
+  }
+}
+.valuee
+{
+  font-size:20px;
+}
+p
+{
+  font-size:50px;
+
+  color:#fffaf1;
+}
+
+.rightButton
+{
+  border:solid #fffaf1 3px;
+  background:transparent;
+  width:370px;
+  height:50px;
+  
+  border-radius:50px;
+  color:#fffaf1;
+}
+.bottonH3
+{
+  color:#fffaf1;
+}
+.rightBotton : hover
+{
+  color:red;
+  background:green;
+}
+.rightPageContainer
+{
+  height:400px;
+  width:max-content;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.rightButton:hover {
+  color: #a55959; 
+  background: #fffaf1; 
+}
+
+
+.rightButton:hover .bottonH3 {
+   color: #a55959; 
+}
+/*****************************************************
+missionPage below
+******************************************************************************/
+.missionPage {
+    grid-area: missionPage;
+    background-image: url('https://cdn.glitch.global/23d744c5-54d0-4c08-b2eb-0af3d2d7f89c/Untitled%20design%20(8).png?v=1728770408560');
+    background-position: center;
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.missionPageContainer {
+    width: 90%;
+    height: 85%;
+    border: #a55959 10px solid;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr;
+}
+
+.missionLeft {
+    
+    padding: 20px;
+    display: flex;
+  flex-direction:column;
+    justify-content: center;
+}
+.missionLeft h1
+{
+  font-size:40px;
+   color: #a55959; 
+}
+.missionLeft p
+{
+   color: #a55959; 
+  font-size:20px;
+  color:black; 
+  margin-block:20px;
+   color: #a55959; 
+}
+.missionButtons
+{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-gap:10px;
+  
+}
+.missionButtons button
+{
+  
+
+  border: black 2px solid; 
+  width:100%;
+  height:40px;
+  border-radius:40px;
+  color: #a55959;
+  border:solid  #a55959 3px;
+  background:transparent;
+  
+}
+.missionButtons button:hover {
+  color: #a55959; 
+  background: #fffaf1; 
+   border:solid #a55959 3px;
+  
+}
+
+
+.missionButtonS:hover .bottonH3 {
+   color: #a55959; 
+}
+
+
+.missionLine {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.missionActualLine {
+    height: 80%;
+    width: 100%;
+    background: #a55959;
+}
+
+.missionRight {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+   
+}
+
+
+.stat1, .stat2, .stat3, .stat4 {
+    background: #FFDDC1; 
+    padding: 20px;
+   display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.stat1 { background: transparent; }
+.stat2 { background: transparent; }
+.stat3 { background: transparent; }
+.stat4 { background:transparent; }
+
+.stat1Text,.stat2Text,.stat3Text,.stat4Text
+{
+  width:70%;
+  color:#a55959;
+}
+.statH2 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.statH3 {
+    font-size: 20px;
+}
+
+/******************************************************************************
+teamPage below<div class="horizontalLineContainer">
+         <div class="horizontalLinePod">
+           
+         </div>
+******************************************************************************/
+
+.teamPage{
+ grid-area:teamPage;
+ background:#a55959;
+  display: grid;
+  grid-template-columns: 27fr 27fr 27fr;
+  grid-template-rows: 25fr 3px 80fr;
+  grid-template-areas:
+    "quote quote quote"
+    "horizontalLineContainer horizontalLineContainer horizontalLineContainer"
+    "podcast1 podcast2 podcast3";
+  grid-gap:10px 20px;
+  padding:100px;
+}
+.horizontalLineContainer
+{
+  grid-area:horizontalLineContainer;
+  background:#fffaf1;
+}
+.quote {
+  grid-area: quote;
+ 
+  border-radius:20px;
+  color:#fffaf1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  font-size:38px;
+  
+}
+
+
+
+.podcast1 {
+  border-radius:20px;
+  border:2px solid #fffaf1;
+  grid-area: podcast1;
+  background: url("https://cdn.glitch.global/bb254866-38ef-4722-bb8f-7dd982b7ff28/3A738C3E-51B1-46BC-BADE-89BE6964E6E3.jpeg?v=1725738423075");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:100%;
+  z-index:17;
+   overflow:hidden;
+}
+.podcast2 {
+   border-radius:20px;
+  
+  border:5px solid #a55959;
+  border:2px solid #fffaf1;
+  grid-area: podcast2;
+  background: url("https://cdn.glitch.global/bb254866-38ef-4722-bb8f-7dd982b7ff28/879799B1-82FD-420F-9B9E-FED739274E50.jpeg?v=1725751125347");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+    z-index:17;
+   overflow:hidden;
+}
+.podcast3 {
+   border-radius:20px;
+  border:5px solid #a55959;
+  border:2px solid #fffaf1;
+  grid-area: podcast3;
+  background: url("https://cdn.glitch.global/bb254866-38ef-4722-bb8f-7dd982b7ff28/kitchen%20koders.png?v=1725753343043");
+background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  
+    z-index:17;
+  overflow:hidden;
+}
+
+.podcast1Text,
+.podcast2Text,
+.podcast3Text {
+  height: 15%;
+  width: 100%;
+  z-index: 900;
+  background: #a55959;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color:#fffaf1;
+  padding-left:20px;
+  padding-right:20px;
+  
+
+ 
+}
+.caseText
+{
+  background:#fffaf1;
+}
+.caseText p {
+  font-size: 0px;
+  color:#a55959;
+}
+.caseText:hover p {
+  font-size: 15px;
+  transition: font-size 1.7s;
+}
+
+.caseText:hover {
+  height: 100%;
+  transition: height 1.3s;
+   
+}
+
+
+
+.arrow {
+  border: solid #a55959;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 9px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.caseText:hover .arrow {
+  position:absolute;
+  bottom:20px;
+  right:center;
+ transform:position 1.3s;
+}
+
+/*****************************************************
+articlePage below
+******************************************************************************/
+.articlePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130vh;
+  background-image: url('https://cdn.glitch.global/23d744c5-54d0-4c08-b2eb-0af3d2d7f89c/Untitled%20design%20(8).png?v=1728770408560');
+  background-position: center;
+  background-size: cover;
+}
+
+.articlePageContainer {
+  width: 80%;  /* Ensure content fits well */
+  max-width: 1200px;
+  padding: 20px;
+  border: 10px solid #a55959;
+  border-radius: 50px;
+  background-color: ;
+  height: 120vh;
+}
+
+.articleLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.articleLeft h1 {
+  font-size: 40px;
+  color: #a55959;
+}
+
+.articleLeft p {
+  color: black;
+  font-size: 20px;
+  text-align: center;
+}
+
+.articleImage {
+  width: 100%;  /* Full container width */
+  display: flex;
+  justify-content: center;
+}
+.articleImage img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.articleButtons {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.articleButtons button {
+  width: 45%;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #a55959;
+  color: #fffaf1;
+  border: none;
+  cursor: pointer;
+}
+
+.articleButtons button:hover {
+  background-color: #fffaf1;
+  color: #a55959;
+  border: 2px solid #a55959;
+}
+
+
+
+/*.stat1, .stat2, .stat3, .stat4 {
+    background: #FFDDC1; 
+    padding: 20px;
+   display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.stat1 { background: transparent; }
+.stat2 { background: transparent; }
+.stat3 { background: transparent; }
+.stat4 { background:transparent; }
+
+.stat1Text,.stat2Text,.stat3Text,.stat4Text
+{
+  width:70%;
+  color:#a55959;
+}
+.statH2 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.statH3 {
+    font-size: 20px;
+}*/
+
+/******************************************************************************
+Footer BElow
+******************************************************************************/
+footer
+{
+  grid-area:Footer;
+  background:#fffaf1;
+  padding-block:0.5vh;
+
+
+}
+
+.fa {
+  font-size: 20px;
+  color: #a55959;
+  text-decoration:none;
+}
+
+
+.footerTop
+{
+  height:13vh;
+  width:100vw;
+  display:grid;
+  padding-block:1vh;
+  grid-template-rows:repeat(3,1fr);
+  grid-template-areas:
+    "contactSocialMedia"
+    "footerNav"
+    "peopleFooter"
+
+    ;
+}
+
+.peopleFooter
+{
+  grid-area:peopleFooter;
+  width:20vw;
+  height:4vh;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:10px;
+  color:#a55959;
+  
+  
+}
+
+
+.footerNav {
+  grid-area:footerNav;
+ 
+  margin:auto;
+  width: 40vw;
+  height: 4vh;
+  background: #fffaf1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.footerNav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerNav ul li {
+  margin-right: 20px;
+}
+
+.footerNav ul li a {
+  color: #a55959;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+
+.contactSocialMedia {
+  grid-area:contactSocialMedia ;
+
+ width:20vw;
+  height:4vh;
+  margin:auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+.footerDivider
+{
+  height:3vh;
+   width:100vw;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  
+}
+hr
+{
+ height:2px;
+  width:90vw;
+  background:#a55959;
+  border:none;
+   margin:auto;
+}
+.footerBottom
+{
+  color:#a55959;
+  height:9vh;
+   width:100vw;
+ 
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  
+}
